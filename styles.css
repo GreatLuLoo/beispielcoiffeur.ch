@@ -585,12 +585,13 @@ code{
   height: 220px;
   background-image:
     linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.22)),
-    radial-gradient(circle at 30% 35%, var(--blue-2), transparent 60%),
-    url("assets/salon.jpg");
+    radial-gradient(circle at 30% 35%, rgba(90, 170, 255, 0.14), transparent 60%),
+    url("./assets/salon.jpg") !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 .media-body{
   padding: 16px;
