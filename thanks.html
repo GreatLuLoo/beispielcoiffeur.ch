@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Danke – Reservation wurde gesendet." />
+  <title>Coiffeur Noir & Blanc | Danke</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+
+  <header class="site-header is-scrolled">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Startseite">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-title">Coiffeur Noir & Blanc</span>
+          <span class="brand-subtitle">Clean. Modern. Präzise.</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="prices.html">Preise</a>
+        <a class="nav-link nav-cta" href="reservation.html">Neue Reservation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="center-card reveal is-visible">
+          <div class="success-mark" aria-hidden="true"></div>
+          <h1 class="h2">Danke!</h1>
+          <p class="muted">
+            Deine Anfrage wurde gesendet (Demo). Wir melden uns so schnell wie möglich mit einer Bestätigung.
+          </p>
+          <div class="inline-actions">
+            <a class="btn btn-primary" href="index.html">Zur Startseite</a>
+            <a class="btn btn-ghost" href="hours-location.html">Standort</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-meta muted">
+        <span>© <span id="year"></span> Coiffeur Noir & Blanc</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
