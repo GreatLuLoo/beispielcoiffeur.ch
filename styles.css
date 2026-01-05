@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Coiffeur Noir & Blanc — Clean White/Grey Design System
+   Coiffeur Noir & Blanc — Clean White/Grey + Soft Blue Accent
    - Static site friendly
    - Responsive
    - Smooth animations
@@ -45,6 +45,13 @@
   --focus: rgba(0,0,0,0.24);
 
   --header-h: 72px;
+
+  /* Soft blue accents (very light) */
+  --blue: rgba(90, 170, 255, 0.20);
+  --blue-2: rgba(90, 170, 255, 0.14);
+  --blue-3: rgba(90, 170, 255, 0.10);
+  --blue-line: rgba(90, 170, 255, 0.22);
+  --blue-deep: rgba(40, 120, 220, 0.22);
 }
 
 /* Optional: prefers reduced motion */
@@ -82,7 +89,7 @@ code{
 }
 
 ::selection{
-  background: rgba(0,0,0,0.10);
+  background: rgba(90, 170, 255, 0.22);
 }
 
 .sr-only{
@@ -126,7 +133,9 @@ code{
   padding: 72px 0;
 }
 .section-alt{
-  background: var(--bg-alt);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    linear-gradient(180deg, var(--bg-alt), var(--bg-alt));
   border-top: 1px solid var(--line-2);
   border-bottom: 1px solid var(--line-2);
 }
@@ -194,8 +203,8 @@ code{
   content:"";
   width: 18px;
   height: 2px;
-  background: var(--text);
-  opacity: 0.7;
+  background: linear-gradient(90deg, rgba(16,17,20,0.75), var(--blue-deep));
+  opacity: 0.75;
   border-radius: 999px;
 }
 
@@ -237,7 +246,9 @@ code{
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: radial-gradient(circle at 30% 30%, #fff, #e9ebee);
+  background:
+    radial-gradient(circle at 30% 30%, #fff, #e9ebee),
+    radial-gradient(circle at 70% 20%, var(--blue-2), transparent 60%);
   border: 1px solid rgba(0,0,0,0.08);
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
@@ -269,7 +280,7 @@ code{
   transition: background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), transform var(--dur-1) var(--ease);
 }
 .nav-link:hover{
-  background: rgba(0,0,0,0.05);
+  background: rgba(90, 170, 255, 0.12);
   color: var(--text);
   transform: translateY(-1px);
 }
@@ -324,7 +335,7 @@ code{
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(18px);
     border: 1px solid rgba(0,0,0,0.10);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 70px rgba(0,0,0,0.16);
     transform: translateY(-10px);
     opacity: 0;
     pointer-events: none;
@@ -370,7 +381,9 @@ code{
   padding: 12px 12px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(255,255,255,0.75);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.80), rgba(255,255,255,0.65)),
+    radial-gradient(circle at 30% 30%, var(--blue-3), transparent 60%);
   backdrop-filter: blur(10px);
 }
 .badge-title{
@@ -388,21 +401,27 @@ code{
 .hero-card{
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.86);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow-md);
   overflow: hidden;
   z-index: 2;
 }
 .hero-card-top{ height: 240px; }
+
+/* ✅ hero.jpg is now used */
 .hero-photo{
   height: 100%;
   width: 100%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0,0,0,0.09), transparent 55%),
-    radial-gradient(circle at 80% 30%, rgba(0,0,0,0.06), transparent 50%),
-    linear-gradient(135deg, #f7f7f8, #e7e8ea);
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(0,0,0,0.20)),
+    radial-gradient(circle at 20% 20%, var(--blue-2), transparent 55%),
+    url("assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 .hero-card-bottom{
   padding: 16px 16px 18px 16px;
   display: grid;
@@ -426,15 +445,15 @@ code{
 
 .hero-bg{
   position: absolute;
-  inset: -120px -120px auto -120px;
-  height: 520px;
+  inset: -140px -120px auto -120px;
+  height: 560px;
   background:
-    radial-gradient(circle at 25% 35%, rgba(0,0,0,0.08), transparent 55%),
+    radial-gradient(circle at 20% 25%, var(--blue), transparent 60%),
     radial-gradient(circle at 70% 20%, rgba(0,0,0,0.06), transparent 55%),
     radial-gradient(circle at 65% 80%, rgba(0,0,0,0.05), transparent 58%);
   filter: blur(2px);
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 @media (max-width: 900px){
@@ -449,7 +468,9 @@ code{
    ========================================================================== */
 .page-hero{
   padding: 72px 0 26px 0;
-  background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    linear-gradient(180deg, var(--bg-alt), var(--bg));
   border-bottom: 1px solid var(--line-2);
 }
 .page-hero-inner{
@@ -469,20 +490,24 @@ code{
 }
 
 .lift{
-  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease);
 }
 .lift:hover{
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+  border-color: rgba(90, 170, 255, 0.35);
 }
 
 .icon-dot{
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  background: var(--text);
-  opacity: 0.8;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), transparent 60%),
+    linear-gradient(135deg, rgba(16,17,20,0.92), rgba(16,17,20,0.55));
+  opacity: 0.9;
   margin-bottom: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
 .text-link{
@@ -500,7 +525,7 @@ code{
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   background:
-    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.06), transparent 55%),
+    radial-gradient(circle at 20% 30%, var(--blue-2), transparent 60%),
     linear-gradient(135deg, #fff, #f2f3f5);
   display: flex;
   align-items: center;
@@ -516,7 +541,9 @@ code{
   padding: 18px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.82);
+  background:
+    radial-gradient(circle at 15% 25%, var(--blue-3), transparent 60%),
+    rgba(255,255,255,0.86);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow-md);
 }
@@ -536,9 +563,12 @@ code{
   width: 42px;
   height: 42px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #f0f1f3, #dfe2e7);
-  border: 1px solid rgba(0,0,0,0.08);
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.7), transparent 55%),
+    linear-gradient(135deg, #f0f1f3, #dfe2e7);
+  border: 1px solid rgba(90, 170, 255, 0.20);
 }
+
 .quote-name{ font-weight: 800; }
 .quote-sub{ font-size: 0.92rem; }
 
@@ -549,12 +579,19 @@ code{
   background: var(--surface);
   box-shadow: var(--shadow-md);
 }
+
+/* ✅ salon.jpg is now used */
 .media-img{
   height: 220px;
-  background:
-    radial-gradient(circle at 30% 35%, rgba(0,0,0,0.08), transparent 55%),
-    linear-gradient(135deg, #f7f7f8, #e5e6e8);
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.22)),
+    radial-gradient(circle at 30% 35%, var(--blue-2), transparent 60%),
+    url("assets/salon.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 .media-body{
   padding: 16px;
   display: grid;
@@ -571,7 +608,9 @@ code{
   padding: 12px;
   border-radius: 16px;
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.75);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    rgba(255,255,255,0.78);
 }
 .kpi{
   font-family: var(--font-display);
@@ -600,7 +639,9 @@ code{
   height: 16px;
   border-radius: 6px;
   border: 1px solid rgba(0,0,0,0.20);
-  background: linear-gradient(135deg, #fff, #e9ebef);
+  background:
+    radial-gradient(circle at 35% 35%, var(--blue-2), transparent 60%),
+    linear-gradient(135deg, #fff, #e9ebef);
   box-shadow: 0 8px 18px rgba(0,0,0,0.06);
 }
 .checklist li::after{
@@ -655,19 +696,28 @@ code{
 }
 
 .btn-primary{
-  background: var(--text);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(90,170,255,0.16), transparent 60%),
+    linear-gradient(180deg, #101114, #000);
   color: #fff;
-  border-color: rgba(0,0,0,0.20);
+  border-color: rgba(0,0,0,0.22);
 }
 .btn-primary:hover{
-  background: #000;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(90,170,255,0.22), transparent 60%),
+    linear-gradient(180deg, #000, #000);
 }
 
 .btn-ghost{
-  background: rgba(255,255,255,0.65);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    rgba(255,255,255,0.65);
 }
 .btn-ghost:hover{
-  background: rgba(255,255,255,0.90);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-2), transparent 60%),
+    rgba(255,255,255,0.92);
+  border-color: rgba(90, 170, 255, 0.28);
 }
 
 .w-100{ width: 100%; }
@@ -689,7 +739,7 @@ code{
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   background:
-    radial-gradient(circle at 30% 20%, rgba(0,0,0,0.06), transparent 55%),
+    radial-gradient(circle at 30% 20%, var(--blue-3), transparent 60%),
     linear-gradient(135deg, #fff, #f3f4f6);
   box-shadow: var(--shadow-md);
   padding: 18px;
@@ -727,7 +777,9 @@ code{
 .table-head{
   padding: 18px;
   border-bottom: 1px solid var(--line-2);
-  background: rgba(0,0,0,0.02);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    rgba(0,0,0,0.02);
 }
 .price-table{
   display: grid;
@@ -752,7 +804,9 @@ code{
 .table-foot{
   padding: 12px 18px;
   border-top: 1px solid var(--line-2);
-  background: rgba(0,0,0,0.02);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    rgba(0,0,0,0.02);
 }
 
 /* ==========================================================================
@@ -783,7 +837,9 @@ code{
   padding: 14px;
   border-radius: 16px;
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.75);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    rgba(255,255,255,0.78);
 }
 .contact-mini-item .label{ font-size: 0.88rem; }
 .contact-mini-item .value{ font-weight: 700; margin-top: 4px; }
@@ -802,8 +858,10 @@ code{
   margin: 14px 16px 0 16px;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.10);
-  background: #f2f3f5;
+  border: 1px solid rgba(90, 170, 255, 0.22);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    #f2f3f5;
 }
 .map-frame iframe{
   display:block;
@@ -838,13 +896,15 @@ input,select,textarea{
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.12);
   padding: 12px 12px;
-  background: rgba(255,255,255,0.92);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(90,170,255,0.08), transparent 60%),
+    rgba(255,255,255,0.94);
   outline: none;
   transition: border-color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease), transform var(--dur-1) var(--ease);
 }
 input:focus,select:focus,textarea:focus{
-  border-color: rgba(0,0,0,0.30);
-  box-shadow: 0 0 0 4px rgba(0,0,0,0.08);
+  border-color: rgba(90, 170, 255, 0.40);
+  box-shadow: 0 0 0 4px rgba(90, 170, 255, 0.14);
 }
 textarea{ resize: vertical; }
 
@@ -885,7 +945,9 @@ textarea{ resize: vertical; }
 .site-footer{
   padding: 28px 0;
   border-top: 1px solid var(--line-2);
-  background: var(--bg-alt);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-3), transparent 60%),
+    var(--bg-alt);
 }
 .footer-grid{
   display: grid;
@@ -926,8 +988,10 @@ textarea{ resize: vertical; }
   margin-inline: auto;
   padding: 22px;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  background: var(--surface);
+  border: 1px solid rgba(90, 170, 255, 0.22);
+  background:
+    radial-gradient(circle at 20% 20%, var(--blue-2), transparent 60%),
+    var(--surface);
   box-shadow: var(--shadow-lg);
   display: grid;
   gap: 12px;
@@ -938,8 +1002,10 @@ textarea{ resize: vertical; }
   height: 56px;
   border-radius: 18px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #ffffff, #e9ebef);
-  border: 1px solid rgba(0,0,0,0.10);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(90,170,255,0.18), transparent 60%),
+    linear-gradient(135deg, #ffffff, #e9ebef);
+  border: 1px solid rgba(90, 170, 255, 0.22);
   box-shadow: 0 16px 40px rgba(0,0,0,0.08);
   position: relative;
 }
@@ -1065,6 +1131,14 @@ textarea{ resize: vertical; }
 .shadow-md{ box-shadow: var(--shadow-md) !important; }
 .shadow-lg{ box-shadow: var(--shadow-lg) !important; }
 
+/* Soft blue helpers */
+.border-blue{ border: 1px solid rgba(90,170,255,0.28) !important; }
+.bg-blue-soft{
+  background:
+    radial-gradient(circle at 20% 20%, rgba(90,170,255,0.16), transparent 60%),
+    rgba(255,255,255,0.82) !important;
+}
+
 /* ==========================================================================
    20) Utility classes (Backgrounds)
    ========================================================================== */
@@ -1077,7 +1151,7 @@ textarea{ resize: vertical; }
    21) Micro interactions / states
    ========================================================================== */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
-  outline: 3px solid var(--focus);
+  outline: 3px solid rgba(90, 170, 255, 0.28);
   outline-offset: 2px;
 }
 
@@ -1100,9 +1174,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     0 0 0 1px rgba(0,0,0,0.06),
     0 18px 60px rgba(0,0,0,0.10);
 }
+.glow-blue{
+  box-shadow:
+    0 0 0 1px rgba(90,170,255,0.18),
+    0 18px 60px rgba(90,170,255,0.16);
+}
 .bg-noise{
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(0,0,0,0.04), transparent 55%),
+    radial-gradient(circle at 20% 20%, rgba(90,170,255,0.10), transparent 55%),
     radial-gradient(circle at 70% 30%, rgba(0,0,0,0.03), transparent 55%),
     linear-gradient(180deg, #fff, #f6f7f8);
 }
@@ -1186,5 +1265,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   26) End — You can extend from here
+   26) Extra Blue Accent Utilities (keeps CSS long + helpful)
+   ========================================================================== */
+.blue-ring{
+  box-shadow: 0 0 0 4px rgba(90,170,255,0.14) !important;
+}
+.blue-tint{
+  background:
+    radial-gradient(circle at 20% 20%, rgba(90,170,255,0.16), transparent 60%),
+    rgba(255,255,255,0.86) !important;
+}
+.hover-blue:hover{
+  border-color: rgba(90,170,255,0.35) !important;
+  box-shadow: 0 18px 60px rgba(90,170,255,0.14) !important;
+}
+
+/* ==========================================================================
+   27) End
    ========================================================================== */
