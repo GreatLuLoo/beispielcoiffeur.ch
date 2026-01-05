@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Reservation – Coiffeur Noir & Blanc. Termin anfragen per Formular." />
   <title>Coiffeur Noir & Blanc | Reservation</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -194,7 +197,6 @@
     const header = document.querySelector('[data-elevate]');
     window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 8));
 
-    // Optional: date min today
     const d = new Date();
     const pad = n => String(n).padStart(2,'0');
     const min = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
