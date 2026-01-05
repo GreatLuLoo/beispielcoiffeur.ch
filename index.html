@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Coiffeur Noir & Blanc – moderner Salon in cleanem Schwarz/Weiss Look. Schnitt, Farbe, Styling. Online Reservation." />
+  <meta name="description" content="Coiffeur Noir & Blanc – moderner Salon in cleanem Weiss/Grau Look. Schnitt, Farbe, Styling. Online Reservation." />
   <title>Coiffeur Noir & Blanc | Home</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -74,7 +77,8 @@
 
         <div class="hero-card reveal" style="--delay: 120ms">
           <div class="hero-card-top">
-            <div class="hero-photo" role="img" aria-label="Abstraktes Salonbild"></div>
+            <!-- nutzt jetzt assets/hero.jpg via CSS -->
+            <div class="hero-photo" role="img" aria-label="Salonbild (Demo)"></div>
           </div>
           <div class="hero-card-bottom">
             <h2 class="h3">Schnitt. Farbe. Styling.</h2>
@@ -197,10 +201,8 @@
   </footer>
 
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile nav
     const btn = document.querySelector('.nav-toggle');
     const nav = document.querySelector('#nav');
     btn.addEventListener('click', () => {
@@ -210,16 +212,12 @@
       document.body.classList.toggle('nav-open');
     });
 
-    // Reveal on scroll
     const els = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('is-visible');
-      });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
     }, { threshold: 0.12 });
     els.forEach(el => io.observe(el));
 
-    // Header elevate
     const header = document.querySelector('[data-elevate]');
     window.addEventListener('scroll', () => {
       header.classList.toggle('is-scrolled', window.scrollY > 8);
